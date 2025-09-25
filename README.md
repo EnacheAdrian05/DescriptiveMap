@@ -73,7 +73,6 @@ flowchart TD
     ```env
     COHERE_API_KEY=your-cohere-key
     TEMPERATURE=your-preferred-temperature
-    FRONTEND_STATIC_PATH=../frontend/dist
     ```
 - **Run the backend server**
     ```bash

@@ -8,7 +8,7 @@ load_dotenv()
 api_key = getenv("COHERE_API_KEY")
 temp = float(getenv("TEMPERATURE"))
 co = Client(api_key)
-app = Flask(__name__, static_folder=getenv("FRONTEND_STATIC_PATH"), static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
