@@ -79,7 +79,6 @@ flowchart TD
     ```bash
     python server.py
 - **The Flask app will run at http://localhost:5000/**
-- **Note: since the backend and frontend are in the same directory, after creating the .env files, we can simply run the backend server with our static files and the    whole app will run at http://localhost:5000/ !** 
 
 
 ## API Documentation
