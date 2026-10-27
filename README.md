@@ -16,7 +16,7 @@ flowchart TD
     A[User Input in Search Bar] --> B[Update Map Location]
     B --> C[Display Markers for Touristic Attractions]
     C --> D{User Clicks on Map Marker}
-    D --> E[Send HTTP GET Request to Server]
+    D --> E[Send HTTP POST Request to Server]
     E --> F[Python Server Receives Request]
     F --> G[Formulate Prompt with Location]
     G --> H[Call AI Model]
