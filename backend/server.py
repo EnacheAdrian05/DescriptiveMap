@@ -16,9 +16,9 @@ def index() -> Response:
     return send_from_directory(app.static_folder, 'index.html')
 
 
-@app.route('/generate', methods=['GET'])
+@app.route('/generate', methods=['POST'])
 def generate() -> Response:
-    prompt = request.args.get('prompt', '')
+    prompt = request.get_json()["prompt"]
     if not prompt:
         return jsonify({"error": "Prompt is required"}), 400
 

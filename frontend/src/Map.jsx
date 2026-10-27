@@ -43,7 +43,7 @@ function getPOIData(map) {
 }
 
 function fetchDescription(name, searchQuery, setDescription, coords) {
-  const promptt = `Write two clearly separated paragraphs about ${name} in ${searchQuery}, coordinates {${coords}}.
+  const prompt = `Write two clearly separated paragraphs about ${name} in ${searchQuery}, coordinates {${coords}}.
 
 Paragraph 1: Describe the place and its significance in a concise way.
 
@@ -51,12 +51,16 @@ Paragraph 2: Provide a brief history or background.
 
 Avoid coordinates and formatting.`;
 
-  const url = `http://localhost:5000/generate?prompt=${encodeURIComponent(promptt)}`;
+  const url = `http://localhost:5000/generate`;
   setDescription("Loading description...");
-  fetch(url)
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
+  })
     .then((response) => response.json())
     .then((data) => {
-      var description = data.response;
+      let description = data.response;
       description += `\n\nYou can find images of <a href="https://www.google.com/search?q=${encodeURIComponent(name)}
       &tbm=isch" target="_blank" rel="noopener noreferrer">${name}</a> here.`;
 
