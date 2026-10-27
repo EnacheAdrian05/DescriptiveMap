@@ -1,6 +1,6 @@
 # Descriptive Map
 
-A fullstack app that shows the touristic attractions in an area and a description for each of them, generated using the Cohere AI model.
+A full-stack app featuring a map of various POIs (points of interest) in a given area, with AI generated descriptions of each POI.
 
 
 ## Features
