@@ -18,7 +18,7 @@ def index() -> Response:
 
 @app.route('/generate', methods=['GET'])
 def generate() -> Response:
-    prompt = request.args.get('prompt', '')
+    prompt = request.get_json()["prompt"]
     if not prompt:
         return jsonify({"error": "Prompt is required"}), 400
 
