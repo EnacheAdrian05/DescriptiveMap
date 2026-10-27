@@ -82,11 +82,11 @@ flowchart TD
 
 ## API Documentation
 
-### GET /generate
+### POST /generate
 
 #### Request
-- **Method** : GET
-- **Path Variable** : &promptt={detailed prompt for location description}
+- **Method** : POST
+- **Body** : {"prompt": the prompt built using the predefined template (for consistency)} 
 
 #### Response
 - **Body** : {"response" : the generated description}
